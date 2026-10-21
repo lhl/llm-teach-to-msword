@@ -1,0 +1,14 @@
+legaldoc
+Copyright 2025 The legaldoc Authors
+
+This product is licensed under the Apache License, Version 2.0.
+See the LICENSE file for the full text.
+
+No third-party source code is vendored in this repository. Runtime
+dependencies (python-docx, lxml, pydantic, and optionally dspy) are
+distributed under their own licenses and are installed separately.
+
+All names, party names, case numbers, addresses, bar numbers, telephone
+numbers, email addresses, and case citations in the documentation, demos,
+tests, and fixtures are fictional. See the "Fictional content" section of
+README.md.
