@@ -10,6 +10,19 @@ the produced file and reports violations with exact locations.
 The result is that whole classes of formatting bug cannot be expressed, and the
 ones that can are caught before the document reaches a client.
 
+<img src="docs/preview.png" width="520" alt="Page one of a rendered motion: centered caption, double-spaced body text, italicized case names, a bold PLEASE TAKE NOTICE phrase, and a centered page number in the footer">
+
+Page one of a motion rendered from the IR by `demo.py`. One-inch margins,
+double-spaced body, italicized case names, bold notice phrase, `PAGE` field in
+the footer. No model chose any of that; `legaldoc/spec.py` did.
+
+**Start here if you want the numbers:** [`evals/`](evals/) holds four labeled
+fixtures and a six-component metric with no LLM judge. Baseline scores **0.974**;
+**0.996** after GEPA. `clean_render` is **1.00 on every fixture before any
+tuning**, because the model is never asked to get formatting right. Details in
+[Evals](#evals); the fixtures are in
+[`evals/fixtures.py`](evals/fixtures.py).
+
 ---
 
 ## Contents
@@ -616,6 +629,8 @@ tests/
   test_lint.py        format checks, defect injection
   test_typography.py  sentence spacing, exact assertions
   test_cli.py         exit codes and round-trips
+docs/
+  preview.png         page one of the demo motion, used in this README
 demo.py          render, mangle, lint both
 ```
 
@@ -634,6 +649,15 @@ To inspect a rendered document:
 ```bash
 soffice --headless --convert-to pdf --outdir build build/motion.docx
 pdftoppm -png -r 80 build/motion.pdf build/page
+```
+
+To regenerate the preview image at the top of this README:
+
+```bash
+python demo.py
+soffice --headless --convert-to pdf --outdir build build/motion.docx
+pdftoppm -png -r 110 -f 1 -l 1 build/motion.pdf build/preview
+magick build/preview-1.png -colorspace Gray -resize 880x docs/preview.png
 ```
 
 ## Fictional content
