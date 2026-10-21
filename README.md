@@ -673,6 +673,9 @@ synthetic:
 - Case citations such as `Smith v. Jones, 123 Cal. App. 4th 456 (2020)` are
   fabricated. Their volume and year pairings are deliberately inconsistent, so
   they cannot be mistaken for real authority.
+- The judge in the demo caption, `Hon. Dredd`, is a joke referencing the comic
+  character. No real judicial officer is depicted, and no real court is
+  associated with these documents beyond appearing in the caption template.
 - No client documents, matter files, or privileged material are included.
 
 ## License

@@ -50,7 +50,8 @@ DOC = Document(
             ],
             title="Case No. 00-CV-000000",
             document_title="PLAINTIFF'S NOTICE OF MOTION AND MOTION TO COMPEL",
-            case_number="Dept. 12",
+            # A joke, and also the <w:br/> coverage: two caption lines in one field.
+            case_number="Hon. Dredd\nDept. 12",
         ),
         Heading(level=1, text="NOTICE OF MOTION"),
         Paragraph(
